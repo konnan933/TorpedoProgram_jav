@@ -10,8 +10,8 @@ public class TorpedoTeszt {
     public static String tesztLoves (int poz){
         Hajo hajo = new Hajo();
         String t= hajo.talalat(poz);
-        assert t.equals("talált"):"nem jó a találat ellenörzés";
-                
-        return"";
+        assert t.equals("talált"):"nem jó a találat ellenörzés!";
+        System.out.println(t);   
+        return  t;
     }
 }
