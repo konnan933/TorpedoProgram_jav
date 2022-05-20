@@ -9,9 +9,16 @@ public class TorpedoTeszt {
     
     public static String tesztLoves (int poz){
         Hajo hajo = new Hajo();
-        String t= hajo.talalat(poz);
-        assert t.equals("talált"):"nem jó a találat ellenörzés!";
-        System.out.println(t);   
-        return  t;
+        int talalatok = 0;
+        while (talalatok < 3) {            
+            String t= hajo.talalat(poz);
+            if (t.equals("talált")) {
+                talalatok++;
+            }
+        }
+        System.out.println("Elsülyedt");
+        //assert t.equals("talált"):"nem jó a találat ellenörzés!";
+          
+        return  "";
     }
 }

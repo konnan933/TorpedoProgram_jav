@@ -1,6 +1,9 @@
 
 package main;
 
+import java.util.Random;
+import java.util.Scanner;
+
 public class Hajo {
     int[] pozicio = new int[3];
 
@@ -9,22 +12,33 @@ public class Hajo {
     }
 
     public void setPozicio(int[] pozicio) {
-        int helyek = 2;
+        Random rnd = new Random();
+        int kezdoPoz = rnd.nextInt(5);
+        System.out.println(kezdoPoz);
+        assert kezdoPoz <= 4:"Rosz helyen kezdődik";
+        System.out.println("Kezdo hely: "+(kezdoPoz+1));
         for (int i = 0; i < pozicio.length; i++) {
-            this.pozicio[i] = helyek;
-            helyek++;
+            this.pozicio[i] = kezdoPoz;
+            kezdoPoz++;
         }
     }
     
+    
     public String talalat (int poz){
-        int i = 0;
-        while (i < pozicio.length && !(poz == pozicio[i])){
-            i++;
-        }
-        if(i < pozicio.length){
-            return "talált";
-        }
-        return "Mellé";
+        Scanner scr = new Scanner(System.in);
+        System.out.println("Hova szeretne lőni?(1-7)");
+        int lovesPoz = scr.nextInt()-1;
+            int i = 0;
+            while (i < pozicio.length && !(lovesPoz == pozicio[i])) {
+                i++;
+            }
+            if (i < pozicio.length) {
+                System.out.println("Talált");
+                return "talált";
+            }
+            System.out.println("Mellé");
+             return "Mellé";
+       
         
     }
 }
