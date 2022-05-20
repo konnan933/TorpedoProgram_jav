@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class Hajo {
     int[] pozicio = new int[3];
+    int lovesek = 0;
 
     public Hajo() {
         setPozicio(pozicio);
@@ -14,7 +15,6 @@ public class Hajo {
     public void setPozicio(int[] pozicio) {
         Random rnd = new Random();
         int kezdoPoz = rnd.nextInt(5);
-        System.out.println(kezdoPoz);
         assert kezdoPoz <= 4:"Rosz helyen kezdődik";
         System.out.println("Kezdo hely: "+(kezdoPoz+1));
         for (int i = 0; i < pozicio.length; i++) {
@@ -32,10 +32,13 @@ public class Hajo {
             while (i < pozicio.length && !(lovesPoz == pozicio[i])) {
                 i++;
             }
+            lovesek++; 
+            System.out.printf("%d. Lövés: ", lovesek);
             if (i < pozicio.length) {
                 System.out.println("Talált");
                 return "talált";
             }
+            
             System.out.println("Mellé");
              return "Mellé";
        
