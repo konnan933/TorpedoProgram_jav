@@ -16,7 +16,6 @@ public class Hajo {
         Random rnd = new Random();
         int kezdoPoz = rnd.nextInt(5);
         assert kezdoPoz <= 4:"Rosz helyen kezdődik";
-        System.out.println("Kezdo hely: "+(kezdoPoz+1));
         for (int i = 0; i < pozicio.length; i++) {
             this.pozicio[i] = kezdoPoz;
             kezdoPoz++;
